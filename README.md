@@ -5,5 +5,18 @@ Video of script in action here: https://infosec.exchange/@marcchehab/10960210451
 
 It's using winsound, so if you're on Unix systems, replace with adequate non-blocking sound library.
 
+# Dependencies
+Uses scapy to sniff network traffic
+```
+pip install scapy
+```
+
 # Run
-Just run the script and Ctrl+C out.
+Just run the script
+```
+python pathtoscript/googerteller.py
+```
+and Ctrl+C to abort
+
+# Known issues
+Printout of detected IPs isn't triggered. Because scapy.all.sniff() is blocking I'll have to find a way around that. (scapy.all.AsyncSniffer(), on the other hand, lacks performance)
