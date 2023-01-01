@@ -27,7 +27,7 @@ class DataAlerter:
 
     def main(self):
         try:
-            scapy.sniff(iface="Ethernet", filter=self.scapy_filter, prn=self.handler, store=0)
+            scapy.sniff(filter=self.scapy_filter, prn=self.handler, store=0)
         except KeyboardInterrupt:
             self.scapy_sniffer.stop()
             self.beeping = 1
